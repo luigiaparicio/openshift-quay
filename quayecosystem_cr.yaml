@@ -18,9 +18,6 @@ spec:
           bucketName: quay-registry-bucket-d372bed5-2297-415d-b08e-88975e2b0a8b
     keepConfigDeployment: true
     deploymentStrategy: RollingUpdate
-    configFiles:
-      - secretName: quaycafile
-        type: extraCaCert
   clair:
     enabled: true
     imagePullSecretName: redhat-quay-pull-secret
