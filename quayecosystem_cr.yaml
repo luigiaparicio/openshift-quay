@@ -13,8 +13,8 @@ spec:
           hostname: s3.openshift-storage.svc
           secure: true
           port: 443
-          accessKey: 
-          secretKey: 
+          accessKey: <YOUR-BUCKET-ACCESS-KEY>
+          secretKey: <YOUR-BUCKET-SECRET-KEY>
           bucketName: quay-registry-bucket-d372bed5-2297-415d-b08e-88975e2b0a8b
     keepConfigDeployment: true
     deploymentStrategy: RollingUpdate
