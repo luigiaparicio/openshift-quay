@@ -6,7 +6,8 @@ First you need a nodesSelector in quayEcosystem CR
 
     spec:
       nodeSelector:
-        
+        cluster.ocs.openshift.io/openshift-storage: ''
+        node-role.kubernetes.io/infra: ''
         
         
 Second add any Tolerations Pods may need. If you do it a Namespace scope could be much easier
