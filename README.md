@@ -1,6 +1,6 @@
 # openshift-quay
 
-## Running on OCS nodes
+## Running on OCS Tainted Nodes
 
 First you need a nodesSelector in quayEcosystem CR
 
