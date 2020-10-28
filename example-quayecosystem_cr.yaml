@@ -4,7 +4,7 @@ metadata:
   name: example-quayecosystem
 spec:
   quay:
-    imagePullSecretName: redhat-quay-pull-secret
+    imagePullSecretName: redhat-pull-secret
     database:
       volumeSize: 100Gi
     registryBackends:
@@ -20,5 +20,15 @@ spec:
     deploymentStrategy: RollingUpdate
   clair:
     enabled: true
-    imagePullSecretName: redhat-quay-pull-secret
+    imagePullSecretName: redhat-pull-secret
     updateInterval: "60m"
+    configFiles:
+      - secretName: quay-myorg-ca
+        type: extraCaCert
+    envVars:
+    - name: HTTP_PROXY
+      value: http://proxy.example.com:8080
+    - name: HTTPS_PROXY
+      value: http://proxy.example.com:8080
+    - name: NO_PROXY
+      value: .example.com,.cluster.local,.svc,10.0.0.0/16,10.128.0.0/14,127.0.0.1,127.0.0.1/8,172.30.0.0/16,localhost
